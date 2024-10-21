@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string("name_en");
             $table->string("native_name");
             $table->string("icon")->nullable();
-            $table->unsignedBigInteger("language_id");
-            $table->unsignedBigInteger("reference_id")->nullable();
             $table->unsignedBigInteger("admin_id");
             $table->tinyInteger("status")->default(1);
             $table->timestamps();
