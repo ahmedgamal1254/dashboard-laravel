@@ -23,15 +23,25 @@
                     aria-label="John Doe"
                     />
                 </div>
-
                 <div class="form-group">
                     <label class="form-label" for="basic-icon-default-fullname">اسم المختصر</label>
+                    <input
+                    name="lang"
+                    type="text"
+                    class="form-control dt-full-name"
+                    placeholder="ar"
+                    aria-label="John Doe"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="basic-icon-default-fullname">اسم المختصر للبلد</label>
                     <input
                     name="icon"
                     type="text"
                     class="form-control dt-full-name"
                     id="basic-icon-default-fullname"
-                    placeholder="ar"
+                    placeholder="eg"
                     aria-label="John Doe"
                     />
                 </div>

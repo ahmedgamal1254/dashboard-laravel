@@ -184,10 +184,12 @@ $lang=request()->segment(1);
                         $("#load_data").show()
                     },
                     success: function(data) {
+                        console.log(data["data"]["icon"])
                         $("#name_en").val(data["data"]["name_en"])
                         $("#name_native").val(data["data"]["native_name"])
                         $("#lang_id").val(data["data"]["id"])
                         $("#icon").val(data["data"]["icon"])
+                        $("#lang").val(data["data"]["language"])
 
                         $("#load_data").hide()
                     },

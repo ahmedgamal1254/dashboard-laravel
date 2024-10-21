@@ -21,7 +21,7 @@ class SetLocale
         // Check if the first segment is a language code
         $locale = $request->segment(1); // e.g., 'en', 'fr', etc.
 
-        if (in_array($locale, all_languages()->pluck("icon")->toArray())) {
+        if (in_array($locale, all_languages()->pluck("language")->toArray())) {
             App::setLocale($locale);
             Session::put('locale', $locale); // Store the locale in the session if needed
         } else {

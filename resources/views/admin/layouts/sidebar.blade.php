@@ -2,7 +2,7 @@
     <div class="navbar-header">
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mr-auto">
-            <a class="navbar-brand" href="../../../html/rtl/vertical-menu-template/index.html">
+            <a class="navbar-brand" href="l">
                 <span class="brand-logo">
                     <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                         <defs>
@@ -31,47 +31,122 @@
                 <h2 class="brand-text">{{ __("title.dashboard_title") }}</h2>
             </a>
         </li>
-        <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+        <li class="nav-item nav-toggle">
+            <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
+                <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
+                <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc">
+                </i>
+            </a>
+        </li>
       </ul>
     </div>
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1">2</span></a>
-          <ul class="menu-content">
-            <li>
-                <a class="d-flex align-items-center" href="dashboard-analytics.html">
-                    <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span>
-                </a>
-            </li>
-            <li>
-                <a class="d-flex align-items-center" href="dashboard-ecommerce.html">
-                    <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span>
-                </a>
-            </li>
-          </ul>
-        </li>
         <li class=" navigation-header">
-            <span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
-        </li>
-        <li class=" nav-item">
-            <a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+            <span data-i18n="Apps &amp; Pages"></span><i data-feather="more-horizontal"></i>
         </li>
         <li class=" nav-item">
             <a class="d-flex align-items-center" href="#">
-                <i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.languages") }}</span>
+                <i class="fa-solid fa-language"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.languages") }}</span>
             </a>
             <ul class="menu-content">
                 <li>
-                    <a class="d-flex align-items-center" href="#">
+                    <a class="d-flex align-items-center" href="{{ route("languages.index",request()->segment(1)) }}">
                         <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.languages") }}</span>
                     </a>
                 </li>
             </ul>
         </li>
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.admins") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.admins") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-user-shield"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.roles") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.roles") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-key"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.permissions") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.permissions") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-th-large"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.parent_categories") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.parent_categories") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-list"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.categories") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.categories") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-newspaper"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.posts") }}</span>
+            </a>
+            <ul class="menu-content">
+                <li>
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">{{ __("title.posts") }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.settings") }}</span>
+            </a>
+        </li>
+
+        <li class=" nav-item">
+            <a class="d-flex align-items-center" href="#">
+                <i class="fas fa-headset"></i><span class="menu-title text-truncate" data-i18n="Invoice">{{ __("title.technical_support") }}</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="d-flex align-items-center" href="app-file-manager.html">
-                <i data-feather="save"></i><span class="menu-title text-truncate" data-i18n="File Manager">{{ __("title.file_manager") }}</span>
+                <i class="fas fa-folder"></i><span class="menu-title text-truncate" data-i18n="File Manager">{{ __("title.file_manager") }}</span>
             </a>
         </li>
       </ul>

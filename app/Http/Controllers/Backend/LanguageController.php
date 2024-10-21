@@ -26,13 +26,13 @@ class LanguageController extends Controller
             if($lang->status == 1){
                 return '
                 <div class="checkbox-wrapper-19">
-                    <input type="checkbox" id="'.$lang->id.'"  type="checkbox" data-id="'. $lang->id .'" class="form control check_status" checked="' . $lang->status .'"  />
+                    <input type="checkbox" value="' . $lang->status . '" id="'.$lang->id.'"  type="checkbox" data-id="'. $lang->id .'" class="form control check_status" checked="' . $lang->status .'"  />
                     <label for="'.$lang->id.'" class="check-box">
                 </div>';
             }else{
                 return '
                 <div class="checkbox-wrapper-19">
-                    <input type="checkbox" id="'.$lang->id.'" type="checkbox" data-id="'. $lang->id .'" class="form control check_status" />
+                    <input type="checkbox" value="' . $lang->status . '" id="'.$lang->id.'" type="checkbox" data-id="'. $lang->id .'" class="form control check_status" />
                     <label for="'.$lang->id.'" class="check-box">
                 </div>';
             }
@@ -47,6 +47,7 @@ class LanguageController extends Controller
             "name_en" => $request->name_en,
             "native_name" => $request->name_native,
             "icon" => $request->icon,
+            "language" => $request->lang,
             "status" => 1,
             "admin_id" => Auth::guard("admin")->user()->id
         ]);
@@ -59,7 +60,7 @@ class LanguageController extends Controller
 
     public function status(Request $request){
 
-        Language::find($request->id)->update(["status" => $request->status=="on" ? 1:0]);
+        Language::find($request->id)->update(["status" => $request->status==1 ? 0:1]);
 
         return response()->json([
             "message" => "تم التحديث بنجاح",
@@ -80,6 +81,7 @@ class LanguageController extends Controller
             "name_en" => $request->name_en,
             "native_name" => $request->name_native,
             "icon" => $request->icon,
+            "language" => $request->lang,
             "status" => 1,
             "admin_id" => Auth::guard("admin")->user()->id
         ]);

@@ -37,14 +37,9 @@ require __DIR__.'/admin.php';
 
 Route::get('/change-language/{lang}', function ($lang) {
     // Validate the language input
-    $languages=all_languages()->pluck("icon")->toArray();
+    $languages=all_languages()->pluck("language")->toArray();
 
-    $language=$lang;
-    if($lang == "ar"){
-        $language="eg";
-    }
-
-    if (in_array($language, $languages)) {
+    if (in_array($lang, $languages)) {
         // Save the language in the session
         session(['locale' => $lang]);
 
@@ -54,7 +49,7 @@ Route::get('/change-language/{lang}', function ($lang) {
 
         // Redirect back to the previous URL but change the language in the URL
         $previousUrl = url()->previous(); // Get the previous URL
-        $newUrl = env("APP_URL") . preg_replace("/$previous_url[1]/", "$language", $previous); // Replace language segment in the URL
+        $newUrl = env("APP_URL") . preg_replace("/$previous_url[1]/", "$lang", $previous,1); // Replace language segment in the URL
 
         App::setLocale($lang);
 

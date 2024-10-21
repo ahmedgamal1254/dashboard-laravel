@@ -1,3 +1,4 @@
+@if (request()->segment(1) == "ar")
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="apple-touch-icon" href="{{ asset("assets/admin/app-assets/images/logo/m icon.png")}}">
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset("assets/admin/app-assets/images/logo/m icon.png")}}">
@@ -18,12 +19,41 @@
 <!-- END: Page CSS-->
 
 <!-- BEGIN: Custom CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css-rtl/custom-rtl.css")}}">
-<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/assets/scss/style-rtl.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/custom.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/assets/scss/style.css")}}">
 <!-- END: Custom CSS-->
 
 <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css"> --}}
+@else
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="apple-touch-icon" href="{{ asset("assets/admin/app-assets/images/logo/m icon.png")}}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset("assets/admin/app-assets/images/logo/m icon.png")}}">
+
+<!-- BEGIN: Vendor CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/vendors/css/vendors.min.css")}}">
+<!-- END: Vendor CSS-->
+
+<!-- BEGIN: Theme CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/bootstrap.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/bootstrap-extended.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/colors.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/components.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/themes/dark-layout.css")}}">
+
+<!-- BEGIN: Page CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/core/menu/menu-types/vertical-menu.css")}}">
+<!-- END: Page CSS-->
+
+<!-- BEGIN: Custom CSS-->
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/app-assets/css/custom.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/admin/assets/scss/style.css")}}">
+<!-- END: Custom CSS-->
+
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css"> --}}
+@endif
+
 <link rel="stylesheet" href="{{ asset("assets/admin/assets/css/toastr.css") }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>

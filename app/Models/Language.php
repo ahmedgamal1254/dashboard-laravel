@@ -11,5 +11,5 @@ class Language extends Model
 
     protected $table="languages";
 
-    protected $fillable=["name_en","native_name","icon","admin_id","status"];
+    protected $fillable=["name_en","native_name","icon","language","admin_id","status"];
 }
